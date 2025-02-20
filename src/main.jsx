@@ -1,11 +1,14 @@
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
-import './index.css'
+import { StrictMode } from "react";
+import { createRoot } from "react-dom/client";
+import "./index.css";
 import { RouterProvider } from "react-router-dom";
-import { router } from './routes/Routes';
+import { router } from "./routes/Routes";
+import APIcontext from "./utilities/context/APIcontext";
 
-createRoot(document.getElementById('root')).render(
+createRoot(document.getElementById("root")).render(
   <StrictMode>
-   <RouterProvider router={router} />
-  </StrictMode>,
-)
+    <APIcontext>
+      <RouterProvider router={router} />
+    </APIcontext>
+  </StrictMode>
+);
