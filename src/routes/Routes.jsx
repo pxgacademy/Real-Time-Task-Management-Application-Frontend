@@ -6,6 +6,7 @@ import Home from "../pages/mainLayout/home/Home";
 import LocalHome from "../pages/localLayout/localHome/LocalHome";
 import Login from "../pages/localLayout/authentication/Login";
 import Register from "../pages/localLayout/authentication/Register";
+import ProjectDetails from "../pages/mainLayout/projects/ProjectDetails";
 
 export const router = createBrowserRouter([
   {
@@ -15,6 +16,10 @@ export const router = createBrowserRouter([
       {
         path: "/",
         element: <Home />,
+      },
+      {
+        path: "project/:id",
+        element: <ProjectDetails />,
       },
     ],
   },

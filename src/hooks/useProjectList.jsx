@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 const useProjectList = () => {
   const secureAPI = useSecureAPI_Link();
   const { user } = useContextValue();
-  const [projects, setProjects] = useState([])
+  const [projects, setProjects] = useState([]);
 
   const {
     data = [],
@@ -22,16 +22,21 @@ const useProjectList = () => {
   });
 
   useEffect(() => {
-    if (data.length > 0){
-        const array = []
-        data.map(p => {
-            p?.project?.map(pp => pp.userId = p._id)
-            array.push(...p.project)
-        })
-        setProjects(array)
-      }    
-  }, [data])
-  
+    if (data.length > 0) {
+      const array = [];
+      let i = 0;
+      data.map((p) => {
+        p?.project?.map((pp) => {
+          pp.userId = p._id;
+          pp.id = i;
+          i++;
+        });
+        array.push(...p.project);
+      });
+      setProjects(array);
+    }
+  }, [data]);
+
   return [projects, isLoading, refetch];
 };
 
