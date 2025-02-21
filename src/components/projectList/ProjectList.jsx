@@ -4,11 +4,12 @@ import { RiArrowDownSLine } from "react-icons/ri";
 import { GoProject } from "react-icons/go";
 import { MdOutlineTask } from "react-icons/md";
 import Loading from "../loading/Loading";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 const ProjectList = () => {
   const [arrowDown, setArrowDown] = useState(false);
   const [projects, isLoading, refetch] = useProjectList();
+  const { id } = useParams();
 
   if (isLoading) return <Loading height="" />;
 
@@ -47,7 +48,12 @@ const ProjectList = () => {
       <div>
         <ul>
           {projects.map((project, i) => (
-            <li key={i} className="border-b border-white/30 px-1 py-2 my-2">
+            <li
+              key={i}
+              className={`border-b px-1 py-2 my-2 ${
+                id * 1 === project?.id ? "border-error" : "border-white/20"
+              }`}
+            >
               <Link to={`/project/${project?.id}`}>
                 <button className="flex items-center cursor-pointer">
                   <GoProject className="mr-2 text-3xl" />
