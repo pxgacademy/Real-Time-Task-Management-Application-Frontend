@@ -8,10 +8,13 @@ import { TiHome } from "react-icons/ti";
 import { Navigate, NavLink, Outlet } from "react-router-dom";
 import Loading from "../components/loading/Loading";
 import useContextValue from "../hooks/useContextValue";
+import useProjectList from "../hooks/useProjectList";
 
 const MainLayout = () => {
   const [arrowDown, setArrowDown] = useState(false)
   const {loading, user} = useContextValue()
+  const [data] = useProjectList()
+  console.log(data);
 
   if (loading) return <Loading/>;
   if (!user) return <Navigate to="/visitor" replace />;
