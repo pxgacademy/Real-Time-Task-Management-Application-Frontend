@@ -5,10 +5,16 @@ import { IoMdContacts } from "react-icons/io";
 import { MdOutlineTask } from "react-icons/md";
 import { RiArrowDownSLine } from "react-icons/ri";
 import { TiHome } from "react-icons/ti";
-import { NavLink, Outlet } from "react-router-dom";
+import { Navigate, NavLink, Outlet } from "react-router-dom";
+import Loading from "../components/loading/Loading";
+import useContextValue from "../hooks/useContextValue";
 
 const MainLayout = () => {
   const [arrowDown, setArrowDown] = useState(false)
+  const {loading, user} = useContextValue()
+
+  if (loading) return <Loading/>;
+  if (!user) return <Navigate to="/visitor" replace />;
   return (
     <>
       <section className="w-full min-h-screen flex flex-col">

@@ -2,11 +2,10 @@ import { io } from "socket.io-client";
 import PageContainer from "../../../components/container/PageContainer";
 import { useEffect, useMemo, useState } from "react";
 import useContextValue from "../../../hooks/useContextValue";
-import { Navigate } from "react-router-dom";
 import Loading from "../../../components/loading/Loading";
 
 const Home = () => {
-  const { user, loading } = useContextValue();
+  const { loading } = useContextValue();
   //   const socket = io(import.meta.env.VITE_API_LINK);
   const socket = useMemo(() => io(import.meta.env.VITE_API_LINK), []);
   const [message, setMessage] = useState("");
@@ -35,7 +34,6 @@ const Home = () => {
   }, []);
 
   if (loading) return <Loading/>;
-  if (!user) return <Navigate to="/visitor" replace />;
 
   return (
     <PageContainer>
