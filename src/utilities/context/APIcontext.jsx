@@ -7,6 +7,7 @@ import Swal from "sweetalert2";
 import {
   GoogleAuthProvider,
   onAuthStateChanged,
+  createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
   signInWithPopup,
   signOut,
@@ -22,6 +23,11 @@ const APIcontext = ({ children }) => {
   const googleProvider = new GoogleAuthProvider();
 
   const createUser = (email, password) => {
+    setLoading(true);
+    return createUserWithEmailAndPassword(auth, email, password);
+  };
+
+  const signInUser = (email, password) => {
     setLoading(true);
     return signInWithEmailAndPassword(auth, email, password);
   };
@@ -92,6 +98,7 @@ const APIcontext = ({ children }) => {
     setLoading,
     createUser,
     updateUser,
+    signInUser,
     googleSignIn,
     signOutUser,
   };

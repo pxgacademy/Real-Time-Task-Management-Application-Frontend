@@ -1,0 +1,252 @@
+[
+  {
+    "email": ["john-doe@example.com", "david-johnson@example.com"],
+    "project": [
+      {
+        "id": 1,
+        "projectName": "Web Development",
+        "status": "In Progress",
+        "toDo": [
+          {
+            "id": 1,
+            "title": "Setup project repository",
+            "startedDate": "2025-02-01",
+            "dueDate": "2025-02-05",
+            "priority": "High",
+            "status": "To Do"
+          },
+          {
+            "id": 2,
+            "title": "Design homepage UI",
+            "startedDate": "2025-02-03",
+            "dueDate": "2025-02-10",
+            "priority": "Medium",
+            "status": "Doing"
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "projectName": "Web Design",
+        "status": "Pending",
+        "toDo": [
+          {
+            "id": 1,
+            "title": "Create wireframes",
+            "startedDate": "2025-02-05",
+            "dueDate": "2025-02-10",
+            "priority": "Medium",
+            "status": "To Do"
+          },
+          {
+            "id": 2,
+            "title": "Design landing page",
+            "startedDate": "2025-02-07",
+            "dueDate": "2025-02-14",
+            "priority": "High",
+            "status": "To Do"
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "projectName": "Marketing Campaign",
+        "status": "Pending",
+        "toDo": [
+          {
+            "id": 1,
+            "title": "Create campaign strategy",
+            "startedDate": "2025-02-10",
+            "dueDate": "2025-02-18",
+            "priority": "High",
+            "status": "To Do"
+          },
+          {
+            "id": 2,
+            "title": "Launch social media ads",
+            "startedDate": "2025-02-15",
+            "dueDate": "2025-02-25",
+            "priority": "Medium",
+            "status": "To Do"
+          }
+        ]
+      },
+      {
+        "id": 4,
+        "projectName": "SEO Optimization",
+        "status": "In Progress",
+        "toDo": [
+          {
+            "id": 1,
+            "title": "Analyze competitors' strategies",
+            "startedDate": "2025-02-12",
+            "dueDate": "2025-02-20",
+            "priority": "Medium",
+            "status": "Doing"
+          },
+          {
+            "id": 2,
+            "title": "Optimize on-page SEO",
+            "startedDate": "2025-02-14",
+            "dueDate": "2025-02-22",
+            "priority": "High",
+            "status": "To Do"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "email": ["alice-smith@example.com", "bob-martin@example.com"],
+    "project": [
+      {
+        "id": 1,
+        "projectName": "Mobile App Development",
+        "status": "In Progress",
+        "toDo": [
+          {
+            "id": 1,
+            "title": "Setup React Native environment",
+            "startedDate": "2025-02-02",
+            "dueDate": "2025-02-06",
+            "priority": "High",
+            "status": "To Do"
+          },
+          {
+            "id": 2,
+            "title": "Implement user authentication",
+            "startedDate": "2025-02-07",
+            "dueDate": "2025-02-12",
+            "priority": "High",
+            "status": "Doing"
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "projectName": "E-learning Platform",
+        "status": "Pending",
+        "toDo": [
+          {
+            "id": 1,
+            "title": "Plan course modules",
+            "startedDate": "2025-02-09",
+            "dueDate": "2025-02-15",
+            "priority": "Medium",
+            "status": "To Do"
+          },
+          {
+            "id": 2,
+            "title": "Develop video player",
+            "startedDate": "2025-02-12",
+            "dueDate": "2025-02-18",
+            "priority": "High",
+            "status": "To Do"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "email": ["charles-brown@example.com", "diana-evans@example.com"],
+    "project": [
+      {
+        "id": 1,
+        "projectName": "E-commerce Website",
+        "status": "Completed",
+        "toDo": [
+          {
+            "id": 1,
+            "title": "Develop product catalog",
+            "startedDate": "2025-01-10",
+            "dueDate": "2025-01-20",
+            "priority": "High",
+            "status": "Done"
+          },
+          {
+            "id": 2,
+            "title": "Implement payment gateway",
+            "startedDate": "2025-01-15",
+            "dueDate": "2025-01-25",
+            "priority": "High",
+            "status": "Done"
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "projectName": "Inventory Management System",
+        "status": "In Progress",
+        "toDo": [
+          {
+            "id": 1,
+            "title": "Setup database schema",
+            "startedDate": "2025-02-10",
+            "dueDate": "2025-02-15",
+            "priority": "High",
+            "status": "To Do"
+          },
+          {
+            "id": 2,
+            "title": "Develop API endpoints",
+            "startedDate": "2025-02-12",
+            "dueDate": "2025-02-20",
+            "priority": "Medium",
+            "status": "Doing"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "email": ["emma-white@example.com", "frank-jones@example.com"],
+    "project": [
+      {
+        "id": 1,
+        "projectName": "AI Chatbot Development",
+        "status": "In Progress",
+        "toDo": [
+          {
+            "id": 1,
+            "title": "Research NLP techniques",
+            "startedDate": "2025-02-08",
+            "dueDate": "2025-02-15",
+            "priority": "Medium",
+            "status": "To Do"
+          },
+          {
+            "id": 2,
+            "title": "Train chatbot model",
+            "startedDate": "2025-02-12",
+            "dueDate": "2025-02-22",
+            "priority": "High",
+            "status": "Doing"
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "projectName": "Social Media Analytics Tool",
+        "status": "Pending",
+        "toDo": [
+          {
+            "id": 1,
+            "title": "Gather API documentation",
+            "startedDate": "2025-02-15",
+            "dueDate": "2025-02-18",
+            "priority": "Medium",
+            "status": "To Do"
+          },
+          {
+            "id": 2,
+            "title": "Implement data visualization",
+            "startedDate": "2025-02-20",
+            "dueDate": "2025-02-25",
+            "priority": "High",
+            "status": "To Do"
+          }
+        ]
+      }
+    ]
+  }
+]

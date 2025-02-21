@@ -11,4 +11,22 @@ html {
     -webkit-appearance: none;
     margin: 0;
   }
+
+  /* Add custom styles here */
+
+  /* Navbar styles */
+  #navOne button {
+    @apply flex items-center gap-x-2;
+  }
+}
+
+/* @apply px-3 border-none rounded-md bg-darkThree/20 cursor-pointer active:scale-95 active:translate-y-1; */
+input[type="file"]::file-selector-button {
+  background: linear-gradient(to top left, #ec50b4, #5343aa);
+  border: none;
+  padding: 3px 16px;
+  border-radius: 6px;
+  margin-right: 10px;
+  box-shadow: 2px 2px 8px rgba(0,0,0,0.2);
+  cursor: pointer;
 }
