@@ -3,12 +3,12 @@
     "email": ["john-doe@example.com", "david-johnson@example.com"],
     "project": [
       {
-        "id": 1,
+        "index": 0,
         "projectName": "Web Development",
         "status": "In Progress",
         "toDo": [
           {
-            "id": 1,
+            "index": 0,
             "title": "Setup project repository",
             "startedDate": "2025-02-01",
             "dueDate": "2025-02-05",
@@ -16,7 +16,7 @@
             "status": "To Do"
           },
           {
-            "id": 2,
+            "index": 1,
             "title": "Design homepage UI",
             "startedDate": "2025-02-03",
             "dueDate": "2025-02-10",
@@ -26,12 +26,12 @@
         ]
       },
       {
-        "id": 2,
+        "index": 1,
         "projectName": "Web Design",
         "status": "Pending",
         "toDo": [
           {
-            "id": 1,
+            "index": 0,
             "title": "Create wireframes",
             "startedDate": "2025-02-05",
             "dueDate": "2025-02-10",
@@ -39,7 +39,7 @@
             "status": "To Do"
           },
           {
-            "id": 2,
+            "index": 1,
             "title": "Design landing page",
             "startedDate": "2025-02-07",
             "dueDate": "2025-02-14",
@@ -49,12 +49,12 @@
         ]
       },
       {
-        "id": 3,
+        "index": 2,
         "projectName": "Marketing Campaign",
         "status": "Pending",
         "toDo": [
           {
-            "id": 1,
+            "index": 0,
             "title": "Create campaign strategy",
             "startedDate": "2025-02-10",
             "dueDate": "2025-02-18",
@@ -62,7 +62,7 @@
             "status": "To Do"
           },
           {
-            "id": 2,
+            "index": 1,
             "title": "Launch social media ads",
             "startedDate": "2025-02-15",
             "dueDate": "2025-02-25",
@@ -72,12 +72,12 @@
         ]
       },
       {
-        "id": 4,
+        "index": 3,
         "projectName": "SEO Optimization",
         "status": "In Progress",
         "toDo": [
           {
-            "id": 1,
+            "index": 0,
             "title": "Analyze competitors' strategies",
             "startedDate": "2025-02-12",
             "dueDate": "2025-02-20",
@@ -85,7 +85,7 @@
             "status": "Doing"
           },
           {
-            "id": 2,
+            "index": 1,
             "title": "Optimize on-page SEO",
             "startedDate": "2025-02-14",
             "dueDate": "2025-02-22",
@@ -97,15 +97,15 @@
     ]
   },
   {
-    "email": ["alice-smith@example.com", "bob-martin@example.com"],
+    "email": ["john-doe@example.com", "bob-martin@example.com"],
     "project": [
       {
-        "id": 1,
+        "index": 0,
         "projectName": "Mobile App Development",
         "status": "In Progress",
         "toDo": [
           {
-            "id": 1,
+            "index": 0,
             "title": "Setup React Native environment",
             "startedDate": "2025-02-02",
             "dueDate": "2025-02-06",
@@ -113,7 +113,7 @@
             "status": "To Do"
           },
           {
-            "id": 2,
+            "index": 1,
             "title": "Implement user authentication",
             "startedDate": "2025-02-07",
             "dueDate": "2025-02-12",
@@ -123,12 +123,12 @@
         ]
       },
       {
-        "id": 2,
+        "index": 1,
         "projectName": "E-learning Platform",
         "status": "Pending",
         "toDo": [
           {
-            "id": 1,
+            "index": 0,
             "title": "Plan course modules",
             "startedDate": "2025-02-09",
             "dueDate": "2025-02-15",
@@ -136,7 +136,7 @@
             "status": "To Do"
           },
           {
-            "id": 2,
+            "index": 1,
             "title": "Develop video player",
             "startedDate": "2025-02-12",
             "dueDate": "2025-02-18",
@@ -151,12 +151,12 @@
     "email": ["charles-brown@example.com", "diana-evans@example.com"],
     "project": [
       {
-        "id": 1,
+        "index": 0,
         "projectName": "E-commerce Website",
         "status": "Completed",
         "toDo": [
           {
-            "id": 1,
+            "index": 0,
             "title": "Develop product catalog",
             "startedDate": "2025-01-10",
             "dueDate": "2025-01-20",
@@ -164,7 +164,7 @@
             "status": "Done"
           },
           {
-            "id": 2,
+            "index": 1,
             "title": "Implement payment gateway",
             "startedDate": "2025-01-15",
             "dueDate": "2025-01-25",
@@ -174,12 +174,12 @@
         ]
       },
       {
-        "id": 2,
+        "index": 1,
         "projectName": "Inventory Management System",
         "status": "In Progress",
         "toDo": [
           {
-            "id": 1,
+            "index": 0,
             "title": "Setup database schema",
             "startedDate": "2025-02-10",
             "dueDate": "2025-02-15",
@@ -187,7 +187,7 @@
             "status": "To Do"
           },
           {
-            "id": 2,
+            "index": 1,
             "title": "Develop API endpoints",
             "startedDate": "2025-02-12",
             "dueDate": "2025-02-20",
@@ -202,12 +202,12 @@
     "email": ["emma-white@example.com", "frank-jones@example.com"],
     "project": [
       {
-        "id": 1,
+        "index": 0,
         "projectName": "AI Chatbot Development",
         "status": "In Progress",
         "toDo": [
           {
-            "id": 1,
+            "index": 0,
             "title": "Research NLP techniques",
             "startedDate": "2025-02-08",
             "dueDate": "2025-02-15",
@@ -215,7 +215,7 @@
             "status": "To Do"
           },
           {
-            "id": 2,
+            "index": 1,
             "title": "Train chatbot model",
             "startedDate": "2025-02-12",
             "dueDate": "2025-02-22",
@@ -225,12 +225,12 @@
         ]
       },
       {
-        "id": 2,
+        "index": 1,
         "projectName": "Social Media Analytics Tool",
         "status": "Pending",
         "toDo": [
           {
-            "id": 1,
+            "index": 0,
             "title": "Gather API documentation",
             "startedDate": "2025-02-15",
             "dueDate": "2025-02-18",
@@ -238,7 +238,7 @@
             "status": "To Do"
           },
           {
-            "id": 2,
+            "index": 1,
             "title": "Implement data visualization",
             "startedDate": "2025-02-20",
             "dueDate": "2025-02-25",

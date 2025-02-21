@@ -1,10 +1,12 @@
 import { useQuery } from "@tanstack/react-query";
 import { useSecureAPI_Link } from "./useAPI_Links";
 import useContextValue from "./useContextValue";
+import { useEffect, useState } from "react";
 
 const useProjectList = () => {
   const secureAPI = useSecureAPI_Link();
   const { user } = useContextValue();
+  const [projects, setProjects] = useState([])
 
   const {
     data = [],
@@ -18,7 +20,19 @@ const useProjectList = () => {
     },
     enabled: !!user?.email,
   });
-  return [data, isLoading, refetch];
+
+  useEffect(() => {
+    if (data.length > 0){
+        const array = []
+        data.map(p => {
+            p?.project?.map(pp => pp.userId = p._id)
+            array.push(...p.project)
+        })
+        setProjects(array)
+      }    
+  }, [data])
+  
+  return [projects, isLoading, refetch];
 };
 
 export default useProjectList;

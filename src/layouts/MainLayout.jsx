@@ -1,21 +1,16 @@
-import { useState } from "react";
 import { FaBars, FaUser } from "react-icons/fa";
-import { GoProject } from "react-icons/go";
 import { IoMdContacts } from "react-icons/io";
-import { MdOutlineTask } from "react-icons/md";
-import { RiArrowDownSLine } from "react-icons/ri";
 import { TiHome } from "react-icons/ti";
 import { Navigate, NavLink, Outlet } from "react-router-dom";
 import Loading from "../components/loading/Loading";
 import useContextValue from "../hooks/useContextValue";
-import useProjectList from "../hooks/useProjectList";
 import Swal from "sweetalert2";
+import ProjectList from "../components/projectList/ProjectList";
 
 const MainLayout = () => {
-  const [arrowDown, setArrowDown] = useState(false);
   const { loading, user, signOutUser } = useContextValue();
-  const [data] = useProjectList();
-  console.log(data);
+
+
 
   const handleSignOut = () => {
     Swal.fire({
@@ -62,6 +57,7 @@ const MainLayout = () => {
               {user?.photoURL ? (
                 <img
                   className="w-full h-full object-cover rounded-full"
+                  referrerPolicy="no-referrer"
                   src={user.photoURL}
                   alt="user img"
                 />
@@ -99,35 +95,7 @@ const MainLayout = () => {
             </div>
 
             <div className="mt-5 pt-5 border-t border-gray-600">
-              <details
-                onClick={() => setArrowDown(!arrowDown)}
-                className="dropdown p-0 -ml-1"
-              >
-                <summary className="btn m-1">
-                  Projects{" "}
-                  <RiArrowDownSLine
-                    className={`${arrowDown ? "rotate-0" : "-rotate-90"}`}
-                  />
-                </summary>
-                <ul className="menu dropdown-content bg-base-100 rounded-box z-[1] w-52 p-2 shadow">
-                  <li>
-                    <button>
-                      <span className="inline-block">
-                        <GoProject />
-                      </span>{" "}
-                      New Project
-                    </button>
-                  </li>
-                  <li>
-                    <button>
-                      <span className="inline-block">
-                        <MdOutlineTask />
-                      </span>{" "}
-                      New Task
-                    </button>
-                  </li>
-                </ul>
-              </details>
+              <ProjectList/>
             </div>
           </aside>
 
