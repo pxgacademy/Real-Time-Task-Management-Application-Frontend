@@ -25,13 +25,16 @@ const useProjectList = () => {
     if (data.length > 0) {
       const array = [];
       let i = 0;
-      data.map((p) => {
-        p?.project?.map((pp) => {
-          pp.userId = p._id;
-          pp.id = i;
+      data.map((user) => {
+        user?.project?.map((project) => {
+          project?.tasks?.map((task) => {
+            (task.projectIndex = project.index), (task.userId = user._id);
+          });
+          project.userId = user._id;
+          project.id = i;
           i++;
         });
-        array.push(...p.project);
+        array.push(...user.project);
       });
       setProjects(array);
     }
