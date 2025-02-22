@@ -13,7 +13,7 @@ const useProjectList = () => {
     isLoading,
     refetch,
   } = useQuery({
-    queryKey: ["allItems"],
+    queryKey: ["allProjects", user?.email],
     queryFn: async () => {
       const { data } = await secureAPI.get(`/projects/${user?.email}`);
       return data;
@@ -36,6 +36,8 @@ const useProjectList = () => {
       setProjects(array);
     }
   }, [data]);
+
+  // console.log(projects);
 
   return [projects, isLoading, refetch];
 };

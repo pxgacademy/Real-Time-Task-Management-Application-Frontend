@@ -56,7 +56,7 @@ const ProjectList = () => {
             >
               <Link to={`/project/${project?.id}`}>
                 <button className="flex items-center cursor-pointer">
-                  <GoProject className="mr-2 text-3xl" />
+                  <GoProject className="mr-2 text-xl" />
                   <p>{project.projectName}</p>
                 </button>
               </Link>
