@@ -23,12 +23,20 @@ const useProjectList = () => {
 
   useEffect(() => {
     if (data?._id) {
+      let i = 0;
+      let taskIndex = 0;
       data?.project?.map((p) => {
         p.userId = data._id;
+        p.index = i;
+        // Map tasks to the task index and user ID
         p?.tasks?.map((task) => {
           task.userId = data._id;
-          task.projectIndex = p.index;
+          task.projectIndex = i;
+          task.index = taskIndex;
+          taskIndex++;
         });
+        taskIndex = 0;
+        i++;
       });
       setProjects(data?.project);
     }

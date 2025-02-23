@@ -14,14 +14,17 @@ const COLUMNS = [
 const ProjectDetails = () => {
   const [loading, setLoading] = useState(false);
   const [projects, isLoading] = useProjectList();
+  const [projectId, setProjectId] = useState(0);
   const [tasks, setTasks] = useState([]);
   const { id } = useParams();
 
   useEffect(() => {
+    if(projects.length === 0) return
     setLoading(true);
     const neededProject = projects.find((p) => p.index === id * 1);
     setTasks(neededProject?.tasks);
-    console.log(neededProject?.tasks);
+    setProjectId(neededProject?.id)
+    // console.log(neededProject?.tasks);
     setLoading(false);
   }, [projects, isLoading, id]);
 
@@ -35,6 +38,7 @@ const ProjectDetails = () => {
         <Column
           key={column.id}
           column={column}
+          projectId={projectId}
           tasks={tasks?.filter((task) => task.status === column.id) || []}
         />
       ))}

@@ -13,7 +13,7 @@ const demo = {
   status: "IN_PROGRESS",
 };
 
-const TaskCard = ({ task }) => {
+const TaskCard = ({ task, projectId }) => {
   const secureLINK = useSecureAPI_Link();
   const [, , refetch] = useProjectList();
   const [status, setStatus] = useState(task?.status);
@@ -25,7 +25,7 @@ const TaskCard = ({ task }) => {
     setStatus(status);
     try {
       await secureLINK.patch(
-        `/projects/${task?.userId}/projectIndex/${task?.projectIndex}/tasks/${task?.index}`,
+        `/projects/${task?.userId}/project/${projectId}/task/${task?.id}`,
         {
           "project.$[proj].tasks.$[task].status": status,
         }
@@ -40,7 +40,7 @@ const TaskCard = ({ task }) => {
     setStartedDate(startedDate);
     try {
       await secureLINK.patch(
-        `/projects/${task?.userId}/projectIndex/${task?.projectIndex}/tasks/${task?.index}`,
+        `/projects/${task?.userId}/project/${projectId}/task/${task?.id}`,
         {
           "project.$[proj].tasks.$[task].startedDate": startedDate,
         }
@@ -55,7 +55,7 @@ const TaskCard = ({ task }) => {
     setDueDate(dueDate);
     try {
       await secureLINK.patch(
-        `/projects/${task?.userId}/projectIndex/${task?.projectIndex}/tasks/${task?.index}`,
+        `/projects/${task?.userId}/project/${projectId}/task/${task?.id}`,
         {
           "project.$[proj].tasks.$[task].dueDate": dueDate,
         }
@@ -70,7 +70,7 @@ const TaskCard = ({ task }) => {
     setPriority(priority);
     try {
       await secureLINK.patch(
-        `/projects/${task?.userId}/projectIndex/${task?.projectIndex}/tasks/${task?.index}`,
+        `/projects/${task?.userId}/project/${projectId}/task/${task?.id}`,
         {
           "project.$[proj].tasks.$[task].priority": priority,
         }
@@ -147,6 +147,7 @@ const TaskCard = ({ task }) => {
 
 TaskCard.propTypes = {
   task: PropTypes.object.isRequired,
+  projectId: PropTypes.number.isRequired,
 };
 
 export default TaskCard;

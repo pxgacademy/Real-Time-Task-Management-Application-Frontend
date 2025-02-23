@@ -70,24 +70,7 @@ const ProjectList = () => {
     }
   };
 
-  const updateProject = async (userId, projectIndex, updates) => {
-    /*
- {
-  projectName: "Updated Web Design",
-  status: "Completed",
-}
 
-*/
-    try {
-      const response = await secureLINK.patch(
-        `/projects/${data?._id}/${id}`,
-        updates
-      );
-      console.log(response.data.message);
-    } catch (error) {
-      console.error("Error updating project:", error);
-    }
-  };
 
   if (isLoading) return <Loading height="" />;
 
