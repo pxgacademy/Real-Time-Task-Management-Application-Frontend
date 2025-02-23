@@ -50,7 +50,7 @@ const TaskCard = ({ task }) => {
       console.log("Error updating task status:", error);
     }
   };
-  
+
   const handleChangeDueDate = async (dueDate) => {
     setDueDate(dueDate);
     try {
@@ -78,6 +78,17 @@ const TaskCard = ({ task }) => {
       refetch();
     } catch (error) {
       console.log("Error updating task status:", error);
+    }
+  };
+
+  const handleDeleteTask = async () => {
+    try {
+      await secureLINK.delete(
+        `/projects/${task?.userId}/projectIndex/${task?.projectIndex}/tasks/${task?.index}`
+      );
+      refetch();
+    } catch (error) {
+      console.error("Error deleting task:", error);
     }
   };
 

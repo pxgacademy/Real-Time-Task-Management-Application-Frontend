@@ -1,6 +1,6 @@
 [
   {
-    "email": ["john-doe@example.com", "david-johnson@example.com"],
+    "email": "john-doe@example.com",
     "project": [
       {
         "index": 0,
@@ -93,14 +93,9 @@
             "status": "TODO"
           }
         ]
-      }
-    ]
-  },
-  {
-    "email": ["john-doe@example.com", "bob-martin@example.com"],
-    "project": [
+      },
       {
-        "index": 0,
+        "index": 4,
         "projectName": "Mobile App Development",
         "status": "In Progress",
         "tasks": [
@@ -123,7 +118,7 @@
         ]
       },
       {
-        "index": 1,
+        "index": 5,
         "projectName": "E-learning Platform",
         "status": "Pending",
         "tasks": [
@@ -144,14 +139,9 @@
             "status": "TODO"
           }
         ]
-      }
-    ]
-  },
-  {
-    "email": ["charles-brown@example.com", "diana-evans@example.com"],
-    "project": [
+      },
       {
-        "index": 0,
+        "index": 6,
         "projectName": "E-commerce Website",
         "status": "Completed",
         "tasks": [
@@ -174,7 +164,7 @@
         ]
       },
       {
-        "index": 1,
+        "index": 7,
         "projectName": "Inventory Management System",
         "status": "In Progress",
         "tasks": [
@@ -199,7 +189,7 @@
     ]
   },
   {
-    "email": ["emma-white@example.com", "frank-jones@example.com"],
+    "email": "emma-white@example.com",
     "project": [
       {
         "index": 0,

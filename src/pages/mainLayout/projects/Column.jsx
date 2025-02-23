@@ -7,7 +7,7 @@ const Column = ({ column, tasks }) => {
     id: column.id
   })
   return (
-    <div className="bg-gray-800 p-4">
+    <div className="bg-gray-800 rounded-xl p-4">
       <h2>{column?.title}</h2>
       <div ref={setNodeRef} className="mt-4 space-y-2">
         {tasks?.map((task, i) => (

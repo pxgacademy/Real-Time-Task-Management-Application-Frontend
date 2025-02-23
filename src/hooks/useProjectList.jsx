@@ -9,7 +9,7 @@ const useProjectList = () => {
   const [projects, setProjects] = useState([]);
 
   const {
-    data = [],
+    data = {},
     isLoading,
     refetch,
   } = useQuery({
@@ -22,27 +22,40 @@ const useProjectList = () => {
   });
 
   useEffect(() => {
-    if (data.length > 0) {
-      const array = [];
-      let i = 0;
-      data.map((user) => {
-        user?.project?.map((project) => {
-          project?.tasks?.map((task) => {
-            (task.projectIndex = project.index), (task.userId = user._id);
-          });
-          project.userId = user._id;
-          project.id = i;
-          i++;
+    if (data?._id) {
+      data?.project?.map((p) => {
+        p.userId = data._id;
+        p?.tasks?.map((task) => {
+          task.userId = data._id;
+          task.projectIndex = p.index;
         });
-        array.push(...user.project);
       });
-      setProjects(array);
+      setProjects(data?.project);
     }
   }, [data]);
 
+  // useEffect(() => {
+  //   if (data.length > 0) {
+  //     const array = [];
+  //     let i = 0;
+  //     data.map((user) => {
+  //       user?.project?.map((project) => {
+  //         project?.tasks?.map((task) => {
+  //           (task.projectIndex = project.index), (task.userId = user._id);
+  //         });
+  //         project.userId = user._id;
+  //         project.id = i;
+  //         i++;
+  //       });
+  //       array.push(...user.project);
+  //     });
+  //     setProjects(array);
+  //   }
+  // }, [data]);
+
   // console.log(projects);
 
-  return [projects, isLoading, refetch];
+  return [projects, isLoading, refetch, data];
 };
 
 export default useProjectList;
