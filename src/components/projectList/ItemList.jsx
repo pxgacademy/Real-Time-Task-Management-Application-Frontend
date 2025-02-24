@@ -11,13 +11,13 @@ import Swal from "sweetalert2";
 const ItemList = ({ project }) => {
   const secureLINK = useSecureAPI_Link();
   const [isInput, setIsInput] = useState(false);
-  const inputRef = useRef(null); // Reference for the input field
+  const inputRef = useRef(null)
   const [, , refetch, data] = useProjectList();
   const { id } = useParams();
 
   useEffect(() => {
     if (isInput && inputRef.current) {
-      inputRef.current.focus(); // Auto-focus when isInput is true
+      inputRef.current.focus(); 
     }
   }, [isInput]);
 

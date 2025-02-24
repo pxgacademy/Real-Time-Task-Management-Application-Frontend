@@ -80,13 +80,13 @@ const MainLayout = () => {
         <section className="flex-1 flex w-full">
           <aside className="w-full max-w-[20%] py-4 px-6 sticky top-0 bg-[#2E2E30]">
             <div id="navOne" className="flex flex-col gap-y-3">
-              <NavLink>
-                <button>
+              <NavLink to="/">
+                <button className="cursor-pointer">
                   <TiHome /> <span>Home</span>
                 </button>
               </NavLink>
-              <NavLink>
-                <button>
+              <NavLink to="/contact">
+                <button className="cursor-pointer">
                   <IoMdContacts /> <span>Contact</span>
                 </button>
               </NavLink>

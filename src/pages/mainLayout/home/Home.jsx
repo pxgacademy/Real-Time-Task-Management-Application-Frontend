@@ -1,55 +1,20 @@
-import { io } from "socket.io-client";
 import PageContainer from "../../../components/container/PageContainer";
-import { useEffect, useMemo, useState } from "react";
 import useContextValue from "../../../hooks/useContextValue";
 import Loading from "../../../components/loading/Loading";
 
 const Home = () => {
-  const { loading } = useContextValue();
-  //   const socket = io(import.meta.env.VITE_API_LINK);
-  const socket = useMemo(() => io(import.meta.env.VITE_API_LINK), []);
-  const [message, setMessage] = useState("");
+  const { loading, user } = useContextValue();
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    socket.emit("message", message);
-  };
-
-  useEffect(() => {
-    socket.on("connect", () => {
-      console.log("Connected to the server", socket.id);
-    });
-
-    socket.on("received-message", (msg) => {
-      console.log(`Received message: ${msg}`);
-    });
-
-    socket.on("welcome", (s) => {
-      console.log(s);
-    });
-
-    return () => {
-      socket.disconnect();
-    };
-  }, []);
-
-  if (loading) return <Loading/>;
+  if (loading) return <Loading />;
 
   return (
     <PageContainer>
-      <h1 className="mb-4">Home Page</h1>
-      <form onSubmit={handleSubmit}>
-        <input
-          type="text"
-          value={message}
-          onChange={(e) => setMessage(e.target.value)}
-          placeholder="Enter your message"
-          className="input input-accent"
-        />
-        <button type="submit" className="btn">
-          Send
-        </button>
-      </form>
+      <h3 className="text-2xl md:text-4xl lg:text-6xl">
+        Welcome to{" "}
+        <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#EC50B4] to-[#6952e9] font-bold">
+          {user?.displayName || user?.email || "the Task Management APP"}
+        </span>
+      </h3>
     </PageContainer>
   );
 };
