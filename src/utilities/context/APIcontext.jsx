@@ -14,9 +14,9 @@ import {
   updateProfile,
 } from "firebase/auth";
 
-
 const APIcontext = ({ children }) => {
   const API_LINK = import.meta.env.VITE_API_LINK;
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isDark, setIsDark] = useState(false);
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -92,6 +92,8 @@ const APIcontext = ({ children }) => {
   const value = {
     isDark,
     setIsDark,
+    isMenuOpen,
+    setIsMenuOpen,
     user,
     setUser,
     loading,

@@ -7,8 +7,10 @@ import useContextValue from "../hooks/useContextValue";
 import Swal from "sweetalert2";
 import ProjectList from "../components/projectList/ProjectList";
 
+
 const MainLayout = () => {
-  const { loading, user, signOutUser } = useContextValue();
+  const { loading, user, signOutUser, isMenuOpen, setIsMenuOpen } = useContextValue();
+  
 
   const handleSignOut = () => {
     Swal.fire({
@@ -41,7 +43,10 @@ const MainLayout = () => {
       <section className="w-full min-h-screen flex flex-col">
         <header className="flex justify-between items-center py-4 px-6 bg-[#2E2E30] border-b border-gray-700">
           <div>
-            <button className="bg-gray-700 p-2 rounded hover:bg-gray-600 cursor-pointer transition-all duration-200">
+            <button
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              className="bg-gray-700 p-2 rounded hover:bg-gray-600 cursor-pointer transition-all duration-200"
+            >
               <FaBars />
             </button>
           </div>
@@ -77,16 +82,26 @@ const MainLayout = () => {
           </div>
         </header>
 
-        <section className="flex-1 flex w-full">
-          <aside className="w-full max-w-[20%] py-4 px-6 sticky top-0 bg-[#2E2E30]">
+        <section className="flex-1 flex w-full relative">
+          <aside
+            className={`${
+              isMenuOpen ? "left-0" : "-left-[100%]"
+            } absolute z-50 lg:static w-full lg:max-w-[20%] py-4 px-6 bg-[#2E2E30] transition-all duration-200`}
+          >
             <div id="navOne" className="flex flex-col gap-y-3">
               <NavLink to="/">
-                <button className="cursor-pointer">
+                <button
+                  onClick={() => setIsMenuOpen(!isMenuOpen)}
+                  className="cursor-pointer"
+                >
                   <TiHome /> <span>Home</span>
                 </button>
               </NavLink>
               <NavLink to="/contact">
-                <button className="cursor-pointer">
+                <button
+                  onClick={() => setIsMenuOpen(!isMenuOpen)}
+                  className="cursor-pointer"
+                >
                   <IoMdContacts /> <span>Contact</span>
                 </button>
               </NavLink>
@@ -97,7 +112,7 @@ const MainLayout = () => {
             </div>
           </aside>
 
-          <section className="w-full max-w-[80%] bg-[#1E1F21] py-4 px-6">
+          <section className="w-full lg:max-w-[80%] bg-[#1E1F21] py-4 px-6">
             <Outlet />
           </section>
         </section>

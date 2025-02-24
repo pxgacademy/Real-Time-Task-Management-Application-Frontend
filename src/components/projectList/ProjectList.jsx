@@ -4,7 +4,6 @@ import { RiArrowDownSLine } from "react-icons/ri";
 import { GoProject } from "react-icons/go";
 import { MdOutlineTask } from "react-icons/md";
 import Loading from "../loading/Loading";
-import { useParams } from "react-router-dom";
 import { useSecureAPI_Link } from "../../hooks/useAPI_Links";
 import Swal from "sweetalert2";
 import ItemList from "./ItemList";
@@ -14,7 +13,7 @@ const ProjectList = () => {
   const secureLINK = useSecureAPI_Link();
   const [arrowDown, setArrowDown] = useState(false);
   const [projects, isLoading, refetch, data] = useProjectList();
-  const { id } = useParams();
+
 
   const handleModalOne = (action) => {
     const modal = document.getElementById("my_modal_1");

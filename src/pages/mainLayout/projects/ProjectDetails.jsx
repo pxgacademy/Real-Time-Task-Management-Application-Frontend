@@ -34,6 +34,7 @@ const ProjectDetails = () => {
 
   return (
     <div className="space-y-5">
+      <p>Double click on the title to edit.</p>
       {COLUMNS.map((column) => (
         <Column
           key={column.id}

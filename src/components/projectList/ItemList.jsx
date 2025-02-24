@@ -7,17 +7,19 @@ import { Link, useParams } from "react-router-dom";
 import useProjectList from "../../hooks/useProjectList";
 import { useSecureAPI_Link } from "../../hooks/useAPI_Links";
 import Swal from "sweetalert2";
+import useContextValue from "../../hooks/useContextValue";
 
 const ItemList = ({ project }) => {
+  const { setIsMenuOpen } = useContextValue();
   const secureLINK = useSecureAPI_Link();
   const [isInput, setIsInput] = useState(false);
-  const inputRef = useRef(null)
+  const inputRef = useRef(null);
   const [, , refetch, data] = useProjectList();
   const { id } = useParams();
 
   useEffect(() => {
     if (isInput && inputRef.current) {
-      inputRef.current.focus(); 
+      inputRef.current.focus();
     }
   }, [isInput]);
 
@@ -53,6 +55,7 @@ const ItemList = ({ project }) => {
 
   // delete a project functionalities
   const handleDelete = async () => {
+    setIsMenuOpen(false);
     Swal.fire({
       title: "Are you sure?",
       text: "You won't be able to revert this!",
@@ -106,7 +109,10 @@ const ItemList = ({ project }) => {
         } ${isInput ? "hidden" : "flex"}`}
       >
         <Link to={`/project/${project?.index}`}>
-          <button className="flex items-center cursor-pointer">
+          <button
+            onClick={() => setIsMenuOpen(false)}
+            className="flex items-center cursor-pointer"
+          >
             <GoProject className="mr-2 text-xl" />
             <p>{project.projectName}</p>
           </button>
