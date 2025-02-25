@@ -78,7 +78,7 @@ const Register = () => {
   };
 
   return (
-    <>
+    <div className="pb-10 px-5">
       <div className="max-w-lg mx-auto mt-10 bg-gradient-to-tl from-[#5343AA]/30 to-[#EC50B4]/30 backdrop-blur p-7 rounded-lg border border-white/30 shadow-lg">
         <div className="text-center border-b border-white/40 pb-3">
           <h2 className="text-3xl font-semibold text-white">
@@ -148,8 +148,7 @@ const Register = () => {
           </p>
         </div>
       </div>
-      <div className="pt-10" />
-    </>
+    </div>
   );
 };
 

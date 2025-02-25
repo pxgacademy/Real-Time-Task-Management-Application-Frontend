@@ -14,14 +14,15 @@ const ProjectList = () => {
   const [arrowDown, setArrowDown] = useState(false);
   const [projects, isLoading, refetch, data] = useProjectList();
 
-
   const handleModalOne = (action) => {
+    if (!data?._id) refetch();
     const modal = document.getElementById("my_modal_1");
     if (action) modal.showModal();
     else modal.close();
   };
 
   const handleModalTwo = (action) => {
+    if (!data?._id) refetch();
     const modal = document.getElementById("my_modal_2");
     if (action) modal.showModal();
     else modal.close();
@@ -45,7 +46,7 @@ const ProjectList = () => {
         `/projects/${data?._id}/project/${form.id.value}/tasks`,
         newTask
       );
-      refetch()
+      refetch();
       console.log(response.data);
     } catch (error) {
       console.error("Error adding task:", error);
