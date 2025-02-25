@@ -12,11 +12,23 @@ html {
     margin: 0;
   }
 
+  .active button {
+    @apply text-yellow-300;
+  }
+
   /* Add custom styles here */
 
   /* Navbar styles */
   #navOne button {
     @apply flex items-center gap-x-2;
+  }
+
+  /* home page design */
+  #homePageDiv h2 {
+    @apply font-semibold text-3xl mb-2;
+  }
+  #homePageDiv li {
+    @apply list-disc ml-6 mb-1;
   }
 }
 
@@ -27,7 +39,7 @@ input[type="file"]::file-selector-button {
   padding: 3px 16px;
   border-radius: 6px;
   margin-right: 10px;
-  box-shadow: 2px 2px 8px rgba(0,0,0,0.2);
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
   cursor: pointer;
 }
 

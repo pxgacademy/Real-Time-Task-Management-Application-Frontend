@@ -58,14 +58,11 @@ const Contact = () => {
               Let’s Help You to build your Projects and Tasks
             </h3>
             <p>
-              Have questions, feedback, or need assistance with Track &
-              Retrieve? We’re here to help! Our team is dedicated to making the
-              process of reporting and recovering lost or found items as
-              seamless as possible. Whether you’re an individual looking to
-              reconnect with a cherished item or an organization seeking to
-              streamline lost-and-found management, we’re just a message away.
-              Reach out to us today and let’s work together to make reunions
-              happen!
+              Have a question, feedback, or need assistance? We’re here to help!
+              Feel free to reach out to us for any inquiries regarding our
+              Real-Time Task Management Application. Whether it’s about bug
+              reports, feature requests, collaborations, or general support,
+              we’d love to hear from you.
             </p>
 
             <div className="mt-10 space-y-2">
@@ -79,9 +76,7 @@ const Contact = () => {
                 <span className="p-3 border border-gray-300 dark:border-gray-700 rounded">
                   <FaEnvelope />
                 </span>
-                <a href="mailto:info@trackandretrieve.com">
-                  info@taskiApp.com
-                </a>
+                <a href="mailto:info@trackandretrieve.com">info@taskiApp.com</a>
               </div>
             </div>
 

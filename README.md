@@ -181,7 +181,3 @@ Have questions or feedback? Reach out!
 ## ⭐ Show Your Support
 
 If you like this project, **please give it a star ⭐** on GitHub! Your support keeps this project alive and growing. 🚀
-
-```
-
-```
